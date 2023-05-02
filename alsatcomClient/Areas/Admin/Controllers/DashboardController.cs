@@ -2,6 +2,7 @@
 
 namespace alsatcomClient.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class DashboardController : Controller
     {
         public IActionResult Index()
