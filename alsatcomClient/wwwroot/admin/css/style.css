@@ -28811,7 +28811,7 @@ div.tagsinput span.tag a {
 
 .wizard > .content > .body {
   float: left;
-  position: absolute;
+  position: inherit;
   width: 95%;
   height: 95%;
   padding: 2.5%;

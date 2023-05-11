@@ -56,7 +56,15 @@
   if ($("#summernoteExample").length) {
     $('#summernoteExample').summernote({
       height: 300,
-      tabsize: 2
+      tabsize: 2,
+        disableDragAndDrop: true,
+      toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+      ]
     });
   }
 

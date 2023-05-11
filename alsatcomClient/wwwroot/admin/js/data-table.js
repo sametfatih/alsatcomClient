@@ -7,9 +7,9 @@
         [5, 10, 15, "All"]
       ],
       "iDisplayLength": 10,
-      "language": {
-        search: ""
-      }
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/tr.json',
+        },
     });
     $('#order-listing').each(function() {
       var datatable = $(this);

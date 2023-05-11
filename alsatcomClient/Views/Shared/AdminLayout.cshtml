@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/admin/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
     <!-- endinject -->
     <!-- plugin css for this page -->
+    <link rel="stylesheet" href="~/admin/vendors/summernote/dist/summernote-bs4.css">
     <!-- End plugin css for this page -->
     <!-- inject:css --> 
     <link rel="stylesheet" href="~/admin/css/style.css">
@@ -213,6 +214,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+                            <i class="fas fa-cube menu-icon"></i>
+                            <span class="menu-title">Ürün İşlemleri</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="page-layouts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Ürünlerim</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/admin/products/productAdd">Yeni Ürün Ekle</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa fa-globe menu-icon"></i>
                             <span class="menu-title">Siteye Git</span>
@@ -244,6 +258,7 @@
     <script src="~/admin/vendors/js/vendor.bundle.addons.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
+    <script src="~/admin/vendors/summernote/dist/summernote-bs4.min.js"></script>
     <!-- End plugin js for this page-->
     <!-- inject:js -->
     <script src="~/admin/js/off-canvas.js"></script>
@@ -253,6 +268,12 @@
     <script src="~/admin/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
+    <script src="~/admin/js/data-table.js"></script>
+    <script src="~/admin/js/wizard.js"></script>
+    <script src="~/admin/js/editorDemo.js"></script>
+    <script src="~/admin/js/dropify.js"></script>
+
+
     <!-- End custom js for this page-->
 </body>
 </html>
