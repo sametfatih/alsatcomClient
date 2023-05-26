@@ -1,0 +1,254 @@
+﻿@{
+    ViewData["Title"] = "Profilim";
+    Layout = "~/Views/Shared/SellerLayout.cshtml";
+}
+
+<div class="page-header">
+    <h3 class="page-title">
+        Profilim
+    </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Profilim</a></li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="border-bottom text-center pb-4">
+                            <img src="~/admin/images/faces/face12.jpg" alt="profile" class="img-lg rounded-circle mb-3">
+                            <div class="d-flex justify-content-center">
+                                <div>
+                                    <h3>Deneme Satıcı</h3>
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="mb-0 mr-2 text-muted">Satıcı Puanı</h5>
+                                        <div class="br-wrapper br-theme-css-stars">
+                                            <select disabled id="profile-rating" name="rating" autocomplete="off" style="display: none;">
+                                                <option disabled value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option selected value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <p>Bureau Oberhaeuser is a design bureau focused on Information- and Interface Design. </p>
+                            
+                        </div>
+                        <div class="py-4">
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Durum
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#"> Aktif </a>
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Telefon
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#"> +90 312 123 3232</a>
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Email
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#"> deneme@testmail.com</a>
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Şirket Adı
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#">Deneme Medikal Ürünleri A.Ş.</a>
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Sahip
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#">Samet Gözüm</a>
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Vergi Numarası
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#">1111111111111</a>
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left">
+                                    Adres
+                                </span>
+                                <span class="float-right text-muted">
+                                    <a href="#">Ahmet Cevdet Mah. Çankaya ANKARA</a>
+                                </span>
+                            </p>
+                        </div>
+                        <a href="/seller/profile/editProfile" class="btn btn-primary btn-block">
+                            <i class="fa fa-edit"></i>
+                            Düzenle
+                        </a>
+                    </div>
+                    <div class="col-lg-8 pl-lg-5">
+                        <div class="profile-feed">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row portfolio-grid">
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-outline-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                                                    <figure class="effect-text-in">
+                                                        <img src="~/admin/images/samples/300x300/1.jpg" alt="image">
+                                                        <figcaption>
+                                                            <h5>Deneme Ürün Adı</h5>
+                                                            <p>
+                                                                <button type="button" class="btn btn-info btn btn-icon-text">
+                                                                    <i class="fa fa-eye"></i>
+                                                                    Görüntüle
+                                                                </button>
+                                                            </p>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

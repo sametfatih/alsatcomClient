@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "ProductAdd";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+﻿
+@{
+    ViewData["Title"] = "Ürün Ekle";
+    Layout = "~/Views/Shared/SellerLayout.cshtml";
 }
+
 
 <div class="page-header">
     <h3 class="page-title">
@@ -49,7 +51,7 @@
                             <div class="col-lg-auto stretch-card align-items-center">
                                 <div class="container text-center">
                                     <div id="div1" class="row row-cols-3">
-                                        <div class="col-md-4" style = "margin-top:20px;">
+                                        <div class="col-md-4" style="margin-top:20px;">
                                             <input type="file" class="dropify" data-height="200" />
                                         </div>
                                     </div>
@@ -90,7 +92,7 @@
 
         const para2 = document.createElement("div");
         para2.setAttribute("class", "col-md-4");
-        para2.setAttribute("style","margin-top:20px;");
+        para2.setAttribute("style", "margin-top:20px;");
 
         para2.appendChild(para);
 
@@ -124,3 +126,4 @@
     }
 
 </script>
+

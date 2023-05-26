@@ -47,7 +47,16 @@
     transitionEffect: "slideLeft",
     stepsOrientation: "vertical",
     onFinished: function(event, currentIndex) {
-      alert("Ba�ar�l�!");
+      alert("Başarılı!");
+    },
+    labels: {
+          cancel: "İptal",
+          current: "Şuan ki adım:",
+          pagination: "Sayfalama",
+          finish: "Bitir",
+          next: "İleri",
+          previous: "Geri Dön",
+          loading: "Yükleniyor ..."
     }
   });
 })(jQuery);
