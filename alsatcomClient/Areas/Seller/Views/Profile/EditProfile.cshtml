@@ -16,42 +16,133 @@
 </div>
 <div class="card">
     <div class="card-body">
-        <form class="forms-sample">
-            <div class="form-group">
-                <label>Telefon</label>
-                <input class="form-control" data-inputmask="'alias': 'phone','cc':'TR'" placeholder="Telefon">
+        <div class="row">
+            <div class="col-md">
+                <form class="forms-sample">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input class="form-control" data-inputmask="'alias': 'phone','cc':'TR'" placeholder="Telefon">
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control" data-inputmask="'alias': 'email'" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label>Şirket Adı</label>
+                                <input type="text" class="form-control" placeholder="Şirket adı">
+                            </div>
+                        </div>
+                        <div class="col-md"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label>Sahip</label>
+                                <input type="text" class="form-control" placeholder="Sahip">
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label>Vergi Numarası</label>
+                                <input type="text" class="form-control" placeholder="Vergi numarası">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <input type="text" class="form-control" placeholder="Adres">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check form-check-flat form-check-success">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input">
+                                Değişiklikleri onaylıyorum.
+                                <i class="input-helper"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2" onclick="showSuccessToast()">Kaydet</button>
+                    <button class="btn btn-light">İptal</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input class="form-control" data-inputmask="'alias': 'email'" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label>Şirket Adı</label>
-                <input type="text" class="form-control" placeholder="Şirket adı">
-            </div>
-            <div class="form-group">
-                <label>Sahip</label>
-                <input type="text" class="form-control" placeholder="Sahip">
-            </div>
-            <div class="form-group">
-                <label>Vergi Numarası</label>
-                <input type="text" class="form-control" placeholder="Vergi numarası">
-            </div>
-            <div class="form-group">
-                <label>Adres</label>
-                <input type="text" class="form-control" placeholder="Adres">
-            </div>
-            <div class="form-group">
-                <div class="form-check form-check-flat form-check-primary">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Remember me
-                        <i class="input-helper"></i>
-                    </label>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Sıkça Sorulan Sorular</h4>
+                        <div class="mt-4">
+                            <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="heading-10">
+                                        <h6 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapse-10" aria-expanded="false" aria-controls="collapse-10" class="collapsed">
+                                                Bilgilerimi doğru girmem önemli mi?
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse-10" class="collapse" role="tabpanel" aria-labelledby="heading-10" data-parent="#accordion-4" style="">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    Bilgilerinizi doğru girmeniz işletme ahlakı ve Alsatcom ile işbirliğiniz açısından siz değerli iş ortaklarımıza olan güvenimizi temsil ediyor.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="heading-11">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapse-11" aria-expanded="false" aria-controls="collapse-11">
+                                                Vergi numaram neden gerekli?
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4" style="">
+                                        <div class="card-body">
+                                            <div class="col-9">
+                                            Alsatcom olarak vergi numaranıza ihtiyaç duymamızın sebebi siz iş ortaklarımızın ticari kuruluş olduğunuzu teyit etmek amacıyla olduğunu belirtmek isteriz.
+                                            </div>
+                                            <br>
+                                            <p class="text-danger">
+                                                <i class="fa fa-exclamation-triangle-octagon mr-2"></i>Vergi numarası gibi işletmelere özel bilgiler kesinlikle tarafımızca paylaşılamaz.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="heading-12">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapse-12" aria-expanded="false" aria-controls="collapse-12">
+                                                Bilgilerim nasıl üçüncü taraf kişilerle paylaşılacak mı?
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapse-12" class="collapse" role="tabpanel" aria-labelledby="heading-12" data-parent="#accordion-4" style="">
+                                        <div class="card-body">
+                                            <div class="col-9">
+                                                Bilgilerinizi sözleşmelerimizde belirtmiş olduğumuz şartlara göre üçüncü taraf kişilerle ve kurumlarla paylaşmıyoruz. Alsatcom olarak siz değerli iş ortaklarımızın verilerini güvenle bünyemizde barındırıyoruz.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-            <button class="btn btn-light">Cancel</button>
-        </form>
+        </div>
+        
     </div>
 </div>

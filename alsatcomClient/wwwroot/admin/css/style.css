@@ -18923,7 +18923,7 @@ input:focus {
 
 .navbar.default-layout-navbar .navbar-brand-wrapper .brand-logo-mini img {
   width: calc(70px - 30px);
-  max-width: 100%;
+  max-width: 70%;
   margin: auto;
 }
 
@@ -20810,7 +20810,7 @@ code {
 }
 
 .accordion.accordion-solid-header .card .card-header a[aria-expanded="true"] {
-  background: #392C70;
+  background: #fed700;
   color: #ffffff;
 }
 

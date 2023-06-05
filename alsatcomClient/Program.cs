@@ -1,7 +1,16 @@
+using alsatcomClient.Services;
+using Microsoft.Net.Http.Headers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient("Alsatcom", httpClient =>
+{
+    httpClient.BaseAddress = new Uri("https://localhost:7165/api/");
+    
+});
+builder.Services.AddSingleton<IHttpClientService,HttpClientManager>();
 
 var app = builder.Build();
 

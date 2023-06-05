@@ -1,32 +1,26 @@
-﻿using alsatcomClient.Models;
+﻿using alsatcomClient.Core.Utilities.Reponses;
+using alsatcomClient.Models;
+using alsatcomClient.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using System.Collections;
 
 namespace alsatcomClient.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IHttpClientService _httpClientService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHttpClientService httpClientService)
         {
-            _logger = logger;
+            _httpClientService = httpClientService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            
+            var customers = await _httpClientService.GetRequest<DataResponse<List<CustomerGetAll_VM>>>("Customer/GetAll");
+         
+            return View(customers.Data);
         }
     }
 }

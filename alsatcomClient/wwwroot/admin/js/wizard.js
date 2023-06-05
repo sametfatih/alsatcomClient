@@ -7,7 +7,17 @@
     transitionEffect: "slideLeft",
     onFinished: function(event, currentIndex) {
       alert("Submitted!");
-    }
+
+      },
+      labels: {
+          cancel: "İptal",
+          current: "Şuan ki adım:",
+          pagination: "Sayfalama",
+          finish: "Bitir",
+          next: "İleri",
+          previous: "Geri Dön",
+          loading: "Yükleniyor ..."
+      }
   });
   var validationForm = $("#example-validation-form");
   validationForm.val({
