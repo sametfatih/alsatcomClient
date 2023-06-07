@@ -18,9 +18,9 @@ namespace alsatcomClient.Controllers
         public async Task<IActionResult> Index()
         {
             
-            var customers = await _httpClientService.GetRequest<DataResponse<List<CustomerGetAll_VM>>>("Customer/GetAll");
+            //var customers = await _httpClientService.GetRequest<DataResponse<List<CustomerGetAll_VM>>>("Customer/GetAll");
          
-            return View(customers.Data);
+            return View();
         }
     }
 }

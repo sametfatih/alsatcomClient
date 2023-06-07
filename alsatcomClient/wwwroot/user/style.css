@@ -337,9 +337,9 @@ a.review-links {
 	background: #fed700 none repeat scroll 0 0;
 	color: #242424;
 	display: inline-block;
-	font-family: Montserrat;
+	/*font-family: Montserrat;*/
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 500;
 	height: 50px;
 	line-height: 50px;
 	position: relative;
@@ -1105,16 +1105,19 @@ textarea:focus {
 .product-variants .produt-variants-size {
   margin-right: 30px;
 }
-.product-variants .produt-variants-size label {
+.product-variants .produt-variants-size .row {
+  margin-left: 0px;
+}
+.product-variants .produt-variants-size .row .form-group label {
 	display: block;
 	font-size: 14px;
 	font-weight: 400;
 }
-.product-variants .produt-variants-size .form-control-select {
-  width: 60px;
-  border-radius: 0px;
-  border: 1px solid #ddd;
-  height: 30px;
+.product-variants .produt-variants-size .row .form-group .form-control-select {
+		width: 60px;
+		border-radius: 0px;
+		border: 1px solid #ddd;
+		height: 30px;
 }
 .product-variants .produt-variants-color label {
   display: block;
@@ -1311,6 +1314,14 @@ textarea:focus {
 /*----------------------------------------*/
 /*  2.1 Header
 /*----------------------------------------*/
+/*Logo*/
+.main-logo{
+    max-width:92%;
+}
+.footer-logo{
+	max-width:85%;
+}
+
 /*Header Top*/
 .header-top {
 	background: #f8f9f9;
@@ -1740,11 +1751,18 @@ textarea:focus {
 .hb-menu > nav > ul {
 		position: relative;
 }
-.hb-menu nav > ul > li {
+.hb-menu nav > ul > .drop-i {
 		display: inline-block;
 		position: relative;
-		padding-right: 40px;
+		padding-right: 35px;
 		transition: all 0.3s ease-in-out;
+		pointer-events:painted;
+}
+.hb-menu nav > ul > li {
+	display: inline-block;
+	position: relative;
+	padding-right: 30px;
+	transition: all 0.3s ease-in-out;
 }
 .hb-menu nav > ul > li > a {
 	display: flex;
@@ -1768,7 +1786,7 @@ textarea:focus {
 .hb-menu nav > ul > li:hover > a::after {
 		color: #ffffff;
 }
-.hb-menu nav > ul > li > a::after {
+.hb-menu nav > ul > .drop-i > a::after {
 	content: "\f107";
 	position: absolute;
 	top: 8px;
@@ -1778,7 +1796,7 @@ textarea:focus {
 	transition: all 0.3s ease-in-out;
 	color: #242424;
 }
-.hb-menu nav > ul > li:nth-child(n+5) > a::after {
+.hb-menu nav > ul > li:nth-child(n+8) > a::after {
 	content: none;
 }
 .hb-menu nav > ul > li:hover  a::after {
@@ -1896,9 +1914,6 @@ textarea:focus {
 	transform: translateY(0)
 }
 /*Header Bottom Megamenu*/
-.hb-menu nav > ul > li:nth-child(4) {
-	margin-right: -20px;
-}
 .megamenu-static-holder {
 	position: static !important;
 }
@@ -1909,7 +1924,7 @@ textarea:focus {
 	background-repeat: no-repeat;
 	top: auto;
 	left: 0;
-	z-index: 99;
+	z-index: 100;
 	width: 100%;
 }
 .megamenu-holder .hb-megamenu {
@@ -5130,22 +5145,23 @@ span.required {
 	font-weight: 600;
 	color: #6c6c6c;
 }
-.comment-author-infos span {
-	color: #333;
-	font-weight: 600;
-}
 .product-details-comment-block .comment-review .rating {
 	display: inline-block;
 	padding-left: 10px;
 	font-size: 18px;
 }
-.comment-author-infos em {
+.product-details-comment-block .review-btn {
+	margin-top: 0.5em;
+}
+.comment-date em {
 	display: block;
 	color: #adadad;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #e1e1e1;
 }
 .comment-details {
 	overflow: hidden;
-	margin-top: 25px;
+	margin-top: 0.5em;
 }
 .comment-details h4 {
 	font-weight: 600;
