@@ -1770,7 +1770,7 @@ textarea:focus {
 	text-transform: uppercase;
 	font-size: 14px;
 	line-height: 35px;
-	font-weight: 500;
+	/*font-weight: 500;*/
 	padding: 8px 0;
 }
 .hb-menu-2 nav > ul > li > a {
@@ -1796,7 +1796,7 @@ textarea:focus {
 	transition: all 0.3s ease-in-out;
 	color: #242424;
 }
-.hb-menu nav > ul > li:nth-child(n+8) > a::after {
+.hb-menu nav > ul > li:nth-child(n+9) > a::after {
 	content: none;
 }
 .hb-menu nav > ul > li:hover  a::after {
@@ -2307,8 +2307,8 @@ textarea:focus {
 .featured-price-box .new-price,
 .featured-price-box .new-price-2{
   color: #2f333a;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
   padding-right: 10px;
 }
 .product_desc .product_desc_info .price-box .new-price-2,
@@ -4891,8 +4891,8 @@ span.required {
 .color-categoriy ul li span.black {
   background: #333;
 }
-.color-categoriy ul li span.Orange {
-  background: #F39C11;
+.color-categoriy ul li span.grey {
+  background: #626262;
 }
 .color-categoriy ul li span.Blue  {
   background: #5D9CEC;
