@@ -1,0 +1,378 @@
+﻿@{
+    ViewData["Title"] = "Ödeme";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<link href="~/user/css/payment.css" rel="stylesheet" />
+
+<!-- Begin Li's Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a href="/home">Anasayfa</a></li>
+                <li><a href="/myAccount">Hesabım</a></li>
+                <li><a href="/cart/">Sepet</a></li>
+                <li class="active">Ödeme</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Li's Breadcrumb Area End Here -->
+<!--Checkout Area Strat-->
+<div class="checkout-area pt-60 pb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <form action="#">
+                    <div class="checkbox-form">
+                        <h3>Fatura Detayları</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="country-select clearfix">
+                                    <label>Ülke <span class="required">*</span></label>
+                                    <select class="nice-select wide">
+                                        <option data-display="Bangladesh">Bangladesh</option>
+                                        <option value="uk">London</option>
+                                        <option value="rou">Romania</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">Germany</option>
+                                        <option value="aus">Australia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Ad <span class="required">*</span></label>
+                                    <input placeholder="" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Soyad <span class="required">*</span></label>
+                                    <input placeholder="" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Şirket Adı</label>
+                                    <input placeholder="" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Adres <span class="required">*</span></label>
+                                    <input placeholder="Mahalle, sokak" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <input placeholder="Site, apartman, daire" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>İl <span class="required">*</span></label>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>İlçe <span class="required">*</span></label>
+                                    <input placeholder="" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Posta kodu <span class="required">*</span></label>
+                                    <input placeholder="" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Email <span class="required">*</span></label>
+                                    <input placeholder="" type="email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Telefon  <span class="required">*</span></label>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="cbox-info" class="checkout-form-list create-account">
+                                    <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+                                    <label>Account password  <span class="required">*</span></label>
+                                    <input placeholder="password" type="password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="different-address">
+                            <div class="ship-different-title">
+                                <h3>
+                                    <label>Teslimat adresi farklı mı?</label>
+                                    <input id="ship-box" type="checkbox">
+                                </h3>
+                            </div>
+                            <div id="ship-box-info" class="row">
+                                <div class="col-md-12">
+                                    <div class="country-select clearfix">
+                                        <label>Ülke <span class="required">*</span></label>
+                                        <select class="nice-select wide">
+                                            <option data-display="Bangladesh">Bangladesh</option>
+                                            <option value="uk">London</option>
+                                            <option value="rou">Romania</option>
+                                            <option value="fr">French</option>
+                                            <option value="de">Germany</option>
+                                            <option value="aus">Australia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Ad <span class="required">*</span></label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Soyad <span class="required">*</span></label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Şirket Adı</label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Adres <span class="required">*</span></label>
+                                        <input placeholder="Mahalle, sokak" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <input placeholder="Site, apartman, daire" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>İl <span class="required">*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>İlçe <span class="required">*</span></label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Posta kodu <span class="required">*</span></label>
+                                        <input placeholder="" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Email <span class="required">*</span></label>
+                                        <input placeholder="" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Telefon  <span class="required">*</span></label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-notes">
+                                <div class="checkout-form-list">
+                                    <label>Sipariş notu</label>
+                                    <textarea id="checkout-mess" cols="30" rows="10" placeholder="Siparişinizle ilgili notlar, örn. teslimat için özel notlar"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="your-order">
+                    <h3>Siparişiniz</h3>
+                    <div class="your-order-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-product-name">Ürün</th>
+                                    <th class="cart-product-total">Toplam</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cart_item">
+                                    <td class="cart-product-name"> Vestibulum suscipit<strong class="product-quantity"> × 1</strong></td>
+                                    <td class="cart-product-total"><span class="amount">£165.00</span></td>
+                                </tr>
+                                <tr class="cart_item">
+                                    <td class="cart-product-name"> Vestibulum suscipit<strong class="product-quantity"> × 1</strong></td>
+                                    <td class="cart-product-total"><span class="amount">£165.00</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th>Sepet Aratoplamı</th>
+                                    <td><span class="amount">£215.00</span></td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th>Toplam</th>
+                                    <td><strong><span class="amount">£215.00</span></strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="payment-method">
+                        <div class="payment-accordion">
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header" id="#payment-1">
+                                        <h5 class="panel-title">
+                                            <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Dorudan Banka Havalesi.
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="#payment-2">
+                                        <h5 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Banka veya Kredi Kartı
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                           @*as*@
+                                            <div class="checkout">
+                                                <div class="credit-card-box">
+                                                    <div class="flip">
+                                                        <div class="front">
+                                                            <div class="chip"></div>
+                                                            <div class="logo" id="svglogo1">
+                                                               @* <img style="width:60px;height:60px;" src="~/user/images/payment/mastercard.svg" />*@
+                                                               
+                                                            </div>
+                                                            <div class="number"></div>
+                                                            <div class="card-holder">
+                                                                <label>Kart Sahibi</label>
+                                                                <div></div>
+                                                            </div>
+                                                            <div class="card-expiration-date">
+                                                                <label>SKT</label>
+                                                                <div></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="back">
+                                                            <div class="strip"></div>
+                                                            <div class="logo" id="svglogo2">
+                                                                @*<img style="width:60px;height:60px;" src="~/user/images/payment/visa.svg"/>  *@                                                             
+                                                            </div>
+                                                            <div class="ccv">
+                                                                <label>CVV/CCV</label>
+                                                                <div></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <form class="form" autocomplete="off" novalidate>
+                                                    <fieldset>
+                                                        <label for="card-number">Kart Numarası</label>
+                                                        <input type="num" id="card-number" class="input-cart-number" maxlength="4" />
+                                                        <input type="num" id="card-number-1" class="input-cart-number" maxlength="4" />
+                                                        <input type="num" id="card-number-2" class="input-cart-number" maxlength="4" />
+                                                        <input type="num" id="card-number-3" class="input-cart-number" maxlength="4" />
+                                                    </fieldset>
+                                                    <fieldset>
+                                                        <label for="card-holder">Kart Sahibi</label>
+                                                        <input type="text" id="card-holder" />
+                                                    </fieldset>
+                                                    <fieldset class="fieldset-expiration">
+                                                        <label for="card-expiration-month">SKT</label>
+                                                        <div class="select">
+                                                            <select id="card-expiration-month">
+                                                                <option></option>
+                                                                <option>01</option>
+                                                                <option>02</option>
+                                                                <option>03</option>
+                                                                <option>04</option>
+                                                                <option>05</option>
+                                                                <option>06</option>
+                                                                <option>07</option>
+                                                                <option>08</option>
+                                                                <option>09</option>
+                                                                <option>10</option>
+                                                                <option>11</option>
+                                                                <option>12</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="select">
+                                                            <select id="card-expiration-year">
+                                                                <option></option>
+                                                                <option>2016</option>
+                                                                <option>2017</option>
+                                                                <option>2018</option>
+                                                                <option>2019</option>
+                                                                <option>2020</option>
+                                                                <option>2021</option>
+                                                                <option>2022</option>
+                                                                <option>2023</option>
+                                                                <option>2024</option>
+                                                                <option>2025</option>
+                                                            </select>
+                                                        </div>
+                                                    </fieldset>
+                                                    <fieldset class="fieldset-ccv">
+                                                        <label for="card-ccv">CVC/CVV</label>
+                                                        <input type="text" id="card-ccv" maxlength="3" />
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                               @*as*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="#payment-3">
+                                        <h5 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                PayPal
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-button-payment">
+                                <input value="Sipariş Ver" type="submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Checkout Area End-->
+

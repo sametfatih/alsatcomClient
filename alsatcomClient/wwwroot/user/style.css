@@ -396,7 +396,7 @@ a.review-links:hover {
 /*  1.6 Input
 /*----------------------------------------*/
 input {
-	background: #eceff8;
+	/*background: #eceff8;*/
 	border: 2px solid #eceff8;
 	height: 45px;
 	box-shadow: none;
