@@ -17,15 +17,20 @@
                     data: formData,
                     dataType: "json",
                     encode: true,
+                    beforeSend: function () {
+                        console.log("spinner çalıştı");
+                        showSpinner();
+                    },
                     success: function (data) {
                         console.log(data);
                         setTimeout(() => {
                             document.location.href = '/admin/dashboard';
                         }, 3500);
-
+                        hideSpinner();
                         showSuccessToast('Ürün başarıyla eklendi.');
                     },
                     error: function () {
+                        hideSpinner();
                         showDangerToast('Ürün eklenemedi!. Lütfen tekrar deneyiniz.');
                     }
                 });
