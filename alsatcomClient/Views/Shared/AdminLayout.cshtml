@@ -20,8 +20,9 @@
     <!-- End plugin css for this page -->
     <!-- inject:css --> 
     <link rel="stylesheet" href="~/admin/css/style.css">
-<link rel="shortcut icon" href="~/admin/images/logo3.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/admin/images/logo3.png" type="image/x-icon">
     <!-- endinject -->
+
 </head>
 <body>
     <div class="container-scroller">
@@ -234,7 +235,8 @@
                         </a>
                         <div class="collapse" id="page-layouts2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Ürünler</a></li>
+                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Tüm Ürünler</a></li>
+                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Onay Bekleyen Ürünler</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/admin/products/productAdd">Yeni Ürün Ekle</a></li>
                             </ul>
                         </div>
@@ -292,6 +294,8 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+    <script src="~/admin/js/jquery.min.js"></script>
+    <script src="~/admin/js/toastdemo.js"></script>
     <!-- plugins:js -->
     <script src="~/admin/vendors/js/vendor.bundle.base.js"></script>
     <script src="~/admin/vendors/js/vendor.bundle.addons.js"></script>
@@ -306,13 +310,13 @@
     <script src="~/admin/js/settings.js"></script>
     <script src="~/admin/js/todolist.js"></script>
     <!-- endinject -->
-    <!-- Custom js for this page-->
+    
+    <script src="~/admin/js/desktop-notification.js"></script>
     <script src="~/admin/js/data-table.js"></script>
     <script src="~/admin/js/wizard.js"></script>
     <script src="~/admin/js/editorDemo.js"></script>
     <script src="~/admin/js/dropify.js"></script>
 
-
-    <!-- End custom js for this page-->
+    
 </body>
 </html>
