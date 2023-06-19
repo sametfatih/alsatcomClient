@@ -1,4 +1,5 @@
 ﻿using alsatcomClient.Areas.Admin.Models;
+using alsatcomClient.Core.Utilities.Reponses;
 using alsatcomClient.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +15,11 @@ namespace alsatcomClient.Areas.Admin.Controllers
             _httpClientService = httpClientService;
         }
 
-        public IActionResult ProductList()
+        public async Task<IActionResult> ProductList()
         {
-            return View();
+
+            var products = await _httpClientService.GetRequest<DataResponse<List<ProductListModel>>>("Product/GetAll");
+            return View(products.Data);
         }
         [HttpGet]
         public IActionResult ProductAdd() {
@@ -30,6 +33,12 @@ namespace alsatcomClient.Areas.Admin.Controllers
                return BadRequest(ModelState);
             }
             return Ok(ModelState);
+        }
+        public async Task<IActionResult> PassiveProductList()
+        {
+
+            var products = await _httpClientService.GetRequest<DataResponse<List<ProductListModel>>>("Product/GetAll");
+            return View(products.Data);
         }
     }
 }

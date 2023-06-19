@@ -1,17 +1,17 @@
-@model List<alsatcomClient.Areas.Admin.Models.ProductListModel>
+﻿@model List<alsatcomClient.Areas.Admin.Models.ProductListModel>
 @{
-    ViewData["Title"] = "Tüm Ürünler";
+    ViewData["Title"] = "Onay Bekleyen Ürünler";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <div class="page-header">
     <h3 class="page-title">
-        Tüm Ürünler
+        Onay Bekleyen Ürünler
     </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Ürün İşlemleri</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Tüm Ürünler</li>
+            <li class="breadcrumb-item active" aria-current="page">Onay Bekleyen Ürünler</li>
         </ol>
     </nav>
 </div>
@@ -23,19 +23,18 @@
                     <table id="admin-product-listing" class="table">
                         <thead>
                             <tr>
-                                <th width="12%">Ürün Numarası #</th>
+                                <th width="16%">Ürün Numarası #</th>
                                 <th width="10%">Eklenme Tarihi</th>
                                 <th width="16%">Ürün Adı</th>
                                 <th width="10%">Kategori</th>
                                 <th width="6%">Fiyat</th>
-                                <th width="6%">Stok</th>
-                                <th width="10%">Güncellenme Tarihi</th>
                                 <th width="6%">Durum</th>
                                 <th width="10%">İşlemler</th>
+                                <th width="10%">Onay</th>
                             </tr>
                         </thead>
-                        <tbody> 
-                            @foreach(var product in Model)
+                        <tbody>
+                            @foreach (var product in Model)
                             {
                                 <tr>
                                     <td>@product.Id</td>
@@ -44,23 +43,16 @@
                                     <td>
                                         <label class="badge badge-outline badge-primary">Elektronik</label>
                                     </td>
-                                    <td>&#x20BA;@product.Price</td>
-                                    <td>@product.Stock Adet</td>
-                                    <td>
-                                        @if(@product.UpdatedDate.Year == 0001)
-                                        {
-                                            <a>Yok</a>   
-                                        }else{
-                                            @(((DateTime)product.UpdatedDate).ToString("MMM dd, yyyy - hh:mm"))
-                                        }   
-                                    </td>
+                                    <td>&#x20BA;@product.Price</td>                                
                                     <td>
                                         @if (product.Status)
                                         {
                                             <label class="badge badge-success">Aktif</label>
-                                        }else{
+                                        }
+                                        else
+                                        {
                                             <label class="badge badge-danger">Pasif</label>
-                                        }                                    
+                                        }
                                     </td>
                                     <td>
                                         <div class="btn-group">
@@ -71,15 +63,17 @@
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                                                 <h6 class="dropdown-header">İşlemler</h6>
                                                 <a class="dropdown-item" href="#">Düzenle</a>
-                                                <a class="dropdown-item" href="#">Satışı Durdur</a>
-                                                <a class="dropdown-item" href="#">Soruları Gör</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Bildir</a>
                                             </div>
                                         </div>
                                     </td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-icon-text">
+                                            <i class="fa fa-check btn-icon-prepend"></i>
+                                            Onayla
+                                        </button>
+                                    </td>
                                 </tr>
-                            }         
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -87,4 +81,5 @@
         </div>
     </div>
 </div>
+
 

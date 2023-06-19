@@ -1,5 +1,5 @@
 ﻿@{
-   
+
 }
 
 <!DOCTYPE html>
@@ -18,13 +18,14 @@
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="~/admin/vendors/summernote/dist/summernote-bs4.css">
     <!-- End plugin css for this page -->
-    <!-- inject:css --> 
+    <!-- inject:css -->
     <link rel="stylesheet" href="~/admin/css/style.css">
     <link rel="shortcut icon" href="~/admin/images/logo3.png" type="image/x-icon">
     <!-- endinject -->
 
 </head>
 <body>
+
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
@@ -35,8 +36,8 @@
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="fas fa-bars"></span>
-                </button>               
-                <ul class="navbar-nav navbar-nav-right">                 
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown d-none d-lg-flex">
                         <div class="nav-link">
                             <span class="dropdown-toggle btn btn-outline-dark" style="border:none;" id="languageDropdown" data-toggle="dropdown">
@@ -48,7 +49,7 @@
                                     <i class="flag-icon flag-icon-us" title="us" id="us"></i>
                                     English
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -182,7 +183,7 @@
                             </a>
                         </div>
                     </li>
-                    
+
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                     <span class="fas fa-bars"></span>
@@ -236,7 +237,7 @@
                         <div class="collapse" id="page-layouts2">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Tüm Ürünler</a></li>
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Onay Bekleyen Ürünler</a></li>
+                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/passiveProductList">Onay Bekleyen Ürünler</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/admin/products/productAdd">Yeni Ürün Ekle</a></li>
                             </ul>
                         </div>
@@ -278,6 +279,9 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
+
+
+
                     @RenderBody()
                 </div>
                 <!-- content-wrapper ends -->
@@ -293,9 +297,15 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
+
+    <div id="spinner" class="loader-demo-box">
+        <div class="square-path-loader"></div>
+    </div>
+
     <!-- container-scroller -->
     <script src="~/admin/js/jquery.min.js"></script>
     <script src="~/admin/js/toastdemo.js"></script>
+    <script src="~/admin/js/loader.js"></script>
     <!-- plugins:js -->
     <script src="~/admin/vendors/js/vendor.bundle.base.js"></script>
     <script src="~/admin/vendors/js/vendor.bundle.addons.js"></script>
@@ -310,13 +320,11 @@
     <script src="~/admin/js/settings.js"></script>
     <script src="~/admin/js/todolist.js"></script>
     <!-- endinject -->
-    
+
     <script src="~/admin/js/desktop-notification.js"></script>
     <script src="~/admin/js/data-table.js"></script>
     <script src="~/admin/js/wizard.js"></script>
     <script src="~/admin/js/editorDemo.js"></script>
     <script src="~/admin/js/dropify.js"></script>
-
-    
 </body>
 </html>

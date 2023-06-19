@@ -1,13 +1,29 @@
-﻿namespace alsatcomClient.Areas.Admin.Models
+﻿using alsatcomClient.Core.Utilities.Reponses;
+using System.Text.Json.Serialization;
+
+namespace alsatcomClient.Areas.Admin.Models
 {
     public class ProductListModel
     {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+        [JsonPropertyName("name")]
         public string Name { get; set; }
+        [JsonPropertyName("brandName")]
         public string BrandName { get; set; }
-        public string CategoryName { get; set; }
-        public string DealerId { get; set; }
+        [JsonPropertyName("stock")]
         public int Stock { get; set; }
+        [JsonPropertyName("price")]
         public float Price { get; set; }
+        [JsonPropertyName("status")]
+        public bool Status { get; set; }
+        [JsonPropertyName("createdDate")]
+        public DateTime CreatedDate { get; set; }
+        [JsonPropertyName("updatedDate")]
+        public DateTime UpdatedDate { get; set; }
+        [JsonPropertyName("discountedPrice")]
+        public float DiscountedPrice { get; set; }
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     }
 }
