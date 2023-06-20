@@ -1,0 +1,62 @@
+﻿@model ErrorViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hata!</title>
+    <link rel="stylesheet" href="~/user/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/user/style.css">
+    <style>
+        html, body {
+           height: 100%;
+        }
+        .container {
+            display: flex;
+            align-content: space-around;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 100%;
+        }
+
+        
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+        <div class="container">         
+                    <div class="error-wrapper text-center ptb-50 pt-xs-20">
+                        <div class="error-text">
+                            <h1>@Model.StatusCode</h1>
+                            @if (Model.StatusCode == 404)
+                            {
+                                <h2>Hay aksi ! SAYFA BULUNAMADI</h2>
+                                <p>Web sitemizde böyle bir sayfa bulunmamaktadır.</p>
+                                <p>Bunun bir hata olduğunu düşünüyorsanız bizimle iletişime geçin.</p>
+                            }
+                            else
+                            {
+                                <h2>Hay aksi ! Bir sorunla karşılaştık</h2>
+                                <p>Sistemimizde çözmeye çalıştığımız bir sorun oluştu.</p>
+                                <p>Lütfen daha sonra tekrar deneyin.</p>
+                            }
+                        </div>
+                        <div class="error-button">
+                            <a href="/home">Anasayfaya Dön</a>
+                        </div>
+                    </div>
+                </div>
+
+</body>
+</html>
