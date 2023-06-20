@@ -37,7 +37,7 @@ namespace alsatcomClient.Areas.Admin.Controllers
         public async Task<IActionResult> PassiveProductList()
         {
 
-            var products = await _httpClientService.GetRequest<DataResponse<List<ProductListModel>>>("Product/GetAll");
+            var products = await _httpClientService.GetRequest<DataResponse<List<ProductListModel>>>("Product/GetAllPassive");
             return View(products.Data);
         }
     }

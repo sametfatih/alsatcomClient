@@ -22,7 +22,13 @@
     <link rel="stylesheet" href="~/admin/css/style.css">
     <link rel="shortcut icon" href="~/admin/images/logo3.png" type="image/x-icon">
     <!-- endinject -->
+    
 
+    
+    <script src="~/admin/js/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+
+   
 </head>
 <body>
 
@@ -52,7 +58,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    @*<li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                             <i class="fas fa-bell mx-0"></i>
                             <span class="count">16</span>
@@ -166,7 +172,7 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </li>*@
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="~/admin/images/faces/face5.jpg" alt="profile" />
@@ -223,8 +229,9 @@
                         </a>
                         <div class="collapse" id="page-layouts1">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="#">Satıcılar</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#">Yeni Satıcı Oluştur</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/admin/dealers/dealerList">Satıcılar</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/admin/dealers/passiveDealerList">Onay Bekleyen Satıcılar</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/admin/dealers/dealerAdd">Yeni Satıcı Oluştur</a></li>
                             </ul>
                         </div>
                     </li>
@@ -236,8 +243,8 @@
                         </a>
                         <div class="collapse" id="page-layouts2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/productList">Tüm Ürünler</a></li>
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="/admin/products/passiveProductList">Onay Bekleyen Ürünler</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/admin/products/productList">Tüm Ürünler</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/admin/products/passiveProductList">Onay Bekleyen Ürünler</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="/admin/products/productAdd">Yeni Ürün Ekle</a></li>
                             </ul>
                         </div>
@@ -250,7 +257,7 @@
                         </a>
                         <div class="collapse" id="page-layouts3">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="#">Satıcı Destek Talepleri</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Satıcı Destek Talepleri</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="#">Müşteri Destek Talepleri</a></li>
                             </ul>
                         </div>
@@ -263,13 +270,13 @@
                         </a>
                         <div class="collapse" id="page-layouts4">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block"> <a class="nav-link" href="#"></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#"></a></li>
                                 <li class="nav-item"> <a class="nav-link" href="#"></a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/Home" target="_blank">
                             <i class="fa fa-globe menu-icon"></i>
                             <span class="menu-title">Siteye Git</span>
                         </a>
@@ -303,16 +310,19 @@
     </div>
 
     <!-- container-scroller -->
-    <script src="~/admin/js/jquery.min.js"></script>
+
     <script src="~/admin/js/toastdemo.js"></script>
     <script src="~/admin/js/loader.js"></script>
     <!-- plugins:js -->
+
     <script src="~/admin/vendors/js/vendor.bundle.base.js"></script>
     <script src="~/admin/vendors/js/vendor.bundle.addons.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
     <script src="~/admin/vendors/summernote/dist/summernote-bs4.min.js"></script>
-    <!-- End plugin js for this page-->
+
+    
+
+    <!-- endinject -->
+
     <!-- inject:js -->
     <script src="~/admin/js/off-canvas.js"></script>
     <script src="~/admin/js/hoverable-collapse.js"></script>
@@ -326,5 +336,6 @@
     <script src="~/admin/js/wizard.js"></script>
     <script src="~/admin/js/editorDemo.js"></script>
     <script src="~/admin/js/dropify.js"></script>
+
 </body>
 </html>

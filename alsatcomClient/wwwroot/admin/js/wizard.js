@@ -1,6 +1,6 @@
 (function ($) {
     'use strict';
-    var form = $("#productAdd-form");
+    var form = $("#productAdd-form1");
     form.children("div").steps({
         headerTag: "h3",
         bodyTag: "section",
@@ -8,32 +8,30 @@
         onFinished: function (event, currentIndex) {
 
             if ($('#TermsAndConditions').is(':checked')) {
+                
+                    var formData = form.serialize();
 
-                var formData = form.serialize();
-
-                $.ajax({
-                    type: "POST",
-                    url: "/Admin/Products/ProductAdd",
-                    data: formData,
-                    dataType: "json",
-                    encode: true,
-                    beforeSend: function () {
-                        console.log("spinner çalıştı");
-                        showSpinner();
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        setTimeout(() => {
-                            document.location.href = '/admin/dashboard';
-                        }, 3500);
-                        hideSpinner();
-                        showSuccessToast('Ürün başarıyla eklendi.');
-                    },
-                    error: function () {
-                        hideSpinner();
-                        showDangerToast('Ürün eklenemedi!. Lütfen tekrar deneyiniz.');
-                    }
-                });
+                    $.ajax({
+                        type: "POST",
+                        url: "/Admin/Products/ProductAdd",
+                        data: formData,
+                        dataType: "json",
+                        encode: true,
+                        beforeSend: function () {
+                            showSpinner();
+                        },
+                        success: function (data) {
+                            setTimeout(() => {
+                                document.location.href = '/admin/dashboard';
+                            }, 3500);
+                            hideSpinner();
+                            showSuccessToast('Ürün başarıyla eklendi.');
+                        },
+                        error: function () {
+                            hideSpinner();
+                            showDangerToast('Ürün eklenemedi!. Lütfen tekrar deneyiniz.');
+                        }
+                    });       
             }
             else {
                 showWarningToast('Lütfen şartlar ve koşullar sözleşmesini onaylayın!.');

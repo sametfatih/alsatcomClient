@@ -12675,6 +12675,12 @@ input[type="button"].btn-block {
     overflow: hidden;
     border-top: 1px solid #e0e0ef;
 }
+.divider {
+    height: 0;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border-top: 3px solid #f2f2f2;
+}
 
 .dropdown-item {
     display: block;
@@ -20354,8 +20360,8 @@ input:focus {
         }
 
     .navbar.default-layout-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile {
-        border-left: 1px solid #e0e0ef;
-        border-right: 1px solid #e0e0ef;
+        /*border-left: 1px solid #e0e0ef;
+        border-right: 1px solid #e0e0ef;*/
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -30241,6 +30247,14 @@ div.tagsinput {
         color: #ffffff;
     }
 
+label.error {
+    color: #FF5E6D;
+    margin-top:0.4em;
+}
+.form-control.error {
+    color: black;
+    background-color: #ff001842;
+}
 .wizard > .steps .error a {
     background: #FF5E6D;
     color: #fff;
@@ -30318,9 +30332,10 @@ div.tagsinput {
         }
 
             .wizard > .content > .body label.error {
+                margin-top: 0.3em;
                 color: #FF5E6D;
                 display: inline-block;
-                margin-left: 1.5em;
+                
             }
 
 .wizard > .actions {

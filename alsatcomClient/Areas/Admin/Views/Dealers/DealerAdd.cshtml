@@ -1,16 +1,19 @@
-﻿@{
-    ViewData["Title"] = "ProductAdd";
+﻿@model alsatcomClient.Areas.Admin.Models.DealerAddModel
+
+@{
+    ViewData["Title"] = "DealerAdd";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
+
 <div class="page-header">
     <h3 class="page-title">
-        Ürün Ekle
+        Satıcı Ekle
     </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Ürün İşlemleri</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Ürün Ekle</li>
+            <li class="breadcrumb-item"><a href="#">Sastıcı İşlemleri</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Satıcı Ekle</li>
         </ol>
     </nav>
 </div>
@@ -19,31 +22,27 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <form id="productAdd-form">
+                <form id="dealerAdd-form">
                     <h5>Bilgiler</h5>
                     <section>
                         <div class="row">
                             <div class="col-md">
                                 <div class="form-group">
-                                    <label for="name">Ürün Adı *</label>
-                                    <input id="name" name="Name" type="text" placeholder="Asus Vivobook 15X OLED Notebook" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="dealerId">Satıcı Numarası*</label>
-                                    <input id="dealerId" name="DealerId" type="text" value="0499518d-45ed-45e6-85d0-08db6f8be8de" class="form-control">
-
+                                    <label for="name">Satıcı Adı *</label>
+                                    <input id="name" name="Name" type="text" placeholder="Evim Pet Shop" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="form-group">
-                                    <label for="brandName">Markası *</label>
-                                    <input id="brandName" name="BrandName" type="text" placeholder="Asus" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="brandName">Kategori *</label>
-                                    <input id="categoryName" name="CategoryName" type="text" placeholder="Elektronik" class="required form-control">
+                                    <label for="companyName">Şirket Adı *</label>
+                                    <input id="companyName" name="CompanyName" type="text" placeholder="Evim Hayvan Ürünleri LTD. ŞTİ." class="form-control">
+
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="adress">Adres *</label>
+                            <input id="adress" name="Adress" type="text" placeholder="Özevler Mah. Yenimahalle, Ankara" class="form-control">
                         </div>
                         <small class="text-danger">(*) Zorunlu alanlar</small>
                     </section>
@@ -53,62 +52,24 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label for="price">Ürün Açıklaması *</label>
-                                    <textarea name="Description" id="summernoteExample">Ürün açıklaması giriniz...</textarea>
+                                    <label for="price">Mağaza Açıklaması *</label>
+                                    <textarea name="Description" id="summernoteExample">Mağaza açıklaması giriniz...</textarea>
                                     <label id="decription-error" class="error" style="display:none;" for="description">Açıklama boş bırakılamaz.</label>
                                 </div>
                             </div>
                         </div>
-                        <small>(*) Bu alanı doldurmak zorunludur. Ürünü detaylı bir şekilde anlatınız. Ürüne ait özellikler, bilgiler ve ürünün kullanımı hakkında bilgi veriniz.</small>
+                        <small>(*) Bu alanı doldurmak zorunludur. Mağanız hakkında bilgiler veriniz.</small>
                     </section>
                     <div class="divider"></div>
-                    <h5>Fotoğraflar</h5>
+                    <h5>Fotoğraf</h5>
                     <section>
                         <div class="col-lg-auto stretch-card align-items-center">
                             <div class="container text-center">
-                                <div id="div1" class="row row-cols-4">
-                                    <div class="col-md-3" style="margin-top:20px;">
-                                        <input type="file" class="dropify" data-height="200" />
-                                    </div>
-                                </div>
-                                <button type="button" onclick="addImage()" class="btn btn-outline-secondary btn-rounded btn-icon" style="margin:2em !important">
-                                    <i class="fas fa-plus text-success"></i>
-                                </button>
-                                <button type="button" onclick="deleteImage()" class="btn btn-outline-secondary btn-rounded btn-icon" style="margin:2em !important">
-                                    <i class="fas fa-trash text-danger"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="divider"></div>
-                    <h5>Fiyat ve Stok</h5>
-                    <section>
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <div class="form-group">
-                                    <label for="price">Ürün Fiyatı *</label>
-                                    <div class="input-group">
-
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text bg-primary text-white">TL</span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="54.90" id="price" name="Price">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="form-group">
-                                    <label for="stock">Ürün Stoğu *</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Adet</span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="12" id="stock" name="Stock">
-                                    </div>
+                                <div class="row justify-content-center">
+                                    <input type="file" class="dropify" data-height="200" />
                                 </div>
                             </div>
                         </div>
-                        <small class="text-danger">(*) Zorunlu alanlar</small>
                     </section>
                     <div class="divider"></div>
                     <section>
@@ -631,7 +592,6 @@
     </div>
 </div>
 
-
 <script>
     $(document).ready(function () {
 
@@ -640,18 +600,18 @@
             var editorVal = $("#summernoteExample").val();
             console.log(editorVal);
 
-            if (editorVal != "" && editorVal != "Ürün açıklaması giriniz...") {
+            if (editorVal != "" && editorVal != "Mağaza açıklaması giriniz...") {
 
-                var valid = $("#productAdd-form").valid();
+                var valid = $("#dealerAdd-form").valid();
 
                 if (valid) {
                     if ($('#TermsAndConditions').is(':checked')) {
 
-                        var formData = $("#productAdd-form").serialize();
+                        var formData = $("#dealerAdd-form").serialize();
 
                         $.ajax({
                             type: "POST",
-                            url: "/Admin/Products/ProductAdd",
+                            url: "/Admin/Dealers/DealerAdd",
                             data: formData,
                             dataType: "json",
                             encode: true,
@@ -663,12 +623,12 @@
                                     document.location.href = '/admin/dashboard';
                                 }, 3500);
                                 hideSpinner();
-                                showSuccessToast('Ürün başarıyla eklendi.');
+                                showSuccessToast('Satıcı başarıyla eklendi.');
                                 showInfoToast('Anasayfaya yönlendiriliyorsunuz.');
                             },
                             error: function () {
                                 hideSpinner();
-                                showDangerToast('Ürün eklenemedi!. Lütfen tekrar deneyiniz.');
+                                showDangerToast('Satıcı eklenemedi!. Lütfen tekrar deneyiniz.');
                             }
                         });
                     }
@@ -691,116 +651,43 @@
 
         });
 
-        $("#productAdd-form").validate({
+        $("#dealerAdd-form").validate({
             rules: {
                 Name: {
                     required: true,
                     minlength: 8,
                     maxlength: 50
                 },
-                DealerId: {
+                CompanyName: {
                     required: true,
-                    minlength: 5,
+                    minlength: 10,
+                    maxlength: 50
                 },
-                BrandName: {
+                Adress: {
                     required: true,
-                    minlength: 5,
-                    maxlength: 35
+                    minlength: 10,
+                    maxlength: 75
                 },
-                CategoryName: {
-                    required: true
-                },
-                Price: {
-                    required: true,
-                    number: true,
-                    range: [1, 99999]
-                },
-                Stock: {
-                    required: true,
-                    digits: true,
-                    range: [5, 1000]
-                }
             },
             messages: {
                 Name: {
-                    required: "Ürünün ismi boş bırakılamaz.",
+                    required: "Mağaza ismi boş bırakılamaz.",
                     minlength: "En az 8 karakter uzunlukta olmalı.",
                     maxlength: "En fazla 50 karakter uzunlukta olmalı."
                 },
-                DealerId: {
-                    required: "Satıcı numarası boş bırakılamaz.",
-                    minlength: "En az 5 karakter uzunlukta olmalı.",
+                CompanyName: {
+                    required: "Şirket adı boş bırakılamaz.",
+                    minlength: "En az 10 karakter uzunlukta olmalı.",
+                    maxlength: "En fazla 50 karakter uzunlukta olmalı."
+
                 },
-                BrandName: {
-                    required: "Ürünün markası boş bırakılamaz.",
-                    minlength: "En az 5 karakter uzunlukta olmalı.",
-                    maxlength: "En fazla 35 karakter uzunlukta olmalı."
+                Adress: {
+                    required: "Adres boş bırakılamaz.",
+                    minlength: "En az 10 karakter uzunlukta olmalı.",
+                    maxlength: "En fazla 75 karakter uzunlukta olmalı."
                 },
-                CategoryName: {
-                    required: "Ürünün kategorisi boş bırakılamaz.",
-                },
-                Description: {
-                    required: "Ürünün açıklaması boş bırakılamaz.",
-                    minlength: "En az 50 karakter uzunlukta olmalı.",
-                    maxlength: "En fazla 500 karakter uzunlukta olmalı."
-                },
-                Price: {
-                    required: "Ürünün fiyatı boş bırakılamaz.",
-                    number: "Fiyat bilgisi sadece sayı olabilir.(Virgül yerine nokta kullanınız.)",
-                    range: "En az 1, en çok 99999 olmalıdır."
-                },
-                Stock: {
-                    required: "Ürünün stok miktarı boş bırakılamaz.",
-                    digits: "Stok bilgisi sadece rakam olabilir.",
-                    range: "En az 5, en çok 1000 olmalıdır."
-                }
             }
         });
 
     });
-</script>
-
-<script>
-
-    function addImage() {
-        const para = document.createElement("input");
-        para.setAttribute("type", "file");
-        para.setAttribute("class", "dropify");
-        para.setAttribute("data-height", "200");
-
-        const para2 = document.createElement("div");
-        para2.setAttribute("class", "col-md-3");
-        para2.setAttribute("style", "margin-top:20px;");
-
-        para2.appendChild(para);
-
-        const element = document.getElementById("div1");
-        element.appendChild(para2);
-
-        (function ($) {
-            'use strict';
-            $('.dropify').dropify({
-                messages: {
-                    'default': 'Bir dosyayı buraya sürükleyip bırakın veya tıklayın',
-                    'replace': 'Değiştirmek için sürükleyip bırakın veya tıklayın',
-                    'remove': 'Kaldır',
-                    'error': 'Hay aksi, yanlış bir şey oldu.'
-                },
-                error: {
-                    'fileSize': 'Dosya boyutu çok büyük (maksimum {{ value }}).',
-                    'minWidth': 'Görüntü genişliği çok küçük (minimum {{ value }}}px).',
-                    'maxWidth': 'Görüntü genişliği çok büyük (maksimum {{ value }}}px).',
-                    'minHeight': 'Görüntü yüksekliği çok küçük (minimum {{ value }}}px).',
-                    'maxHeight': 'Görüntü yüksekliği çok büyük (maksimum {{ value }}}px).',
-                    'imageFormat': 'Resim biçimine izin verilmiyor. (yalnızca {{ value }}).'
-                }
-            });
-        })(jQuery);
-    }
-
-    function deleteImage() {
-        var select = document.getElementById("div1");
-        select.removeChild(select.lastChild);
-    }
-
 </script>

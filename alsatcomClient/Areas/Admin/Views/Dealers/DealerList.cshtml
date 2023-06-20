@@ -1,17 +1,17 @@
-@model List<alsatcomClient.Areas.Admin.Models.ProductListModel>
+﻿@model List<alsatcomClient.Areas.Admin.Models.DealerListModel>
 @{
-    ViewData["Title"] = "Tüm Ürünler";
+    ViewData["Title"] = "Satıcılar";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <div class="page-header">
     <h3 class="page-title">
-        Tüm Ürünler
+        Satıcılar
     </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Ürün İşlemleri</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Tüm Ürünler</li>
+            <li class="breadcrumb-item"><a href="#">Satıcı İşlemleri</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Satıcılar</li>
         </ol>
     </nav>
 </div>
@@ -23,63 +23,69 @@
                     <table id="admin-datatable" class="table">
                         <thead>
                             <tr>
-                                <th width="12%">Ürün Numarası #</th>
+                                <th width="12%">Satıcı Numarası #</th>
                                 <th width="10%">Eklenme Tarihi</th>
-                                <th width="16%">Ürün Adı</th>
-                                <th width="10%">Kategori</th>
-                                <th width="6%">Fiyat</th>
-                                <th width="6%">Stok</th>
+                                <th width="16%">Satıcı Adı</th>
+                                <th width="15%">Adres</th>
+                                <th width="15%">Açıklama</th>
+                                <th width="8%">Puan</th>
                                 <th width="10%">Güncellenme Tarihi</th>
                                 <th width="6%">Durum</th>
                                 <th width="10%">İşlemler</th>
                             </tr>
                         </thead>
-                        <tbody> 
-                            @foreach(var product in Model)
+                        <tbody>
+                            @foreach (var dealer in Model)
                             {
                                 <tr>
-                                    <td>@product.Id</td>
-                                    <td>@(((DateTime)product.CreatedDate).ToString("MMM dd, yyyy - hh:mm"))</td>
-                                    <td>@product.Name</td>
+                                    <td>@dealer.Id</td>
+                                    <td>@(((DateTime)dealer.CreatedDate).ToString("MMM dd, yyyy - hh:mm"))</td>
+                                    <td>@dealer.Name</td>
+                                    <td>@dealer.Adress</td>
+                                    <td>@dealer.Description</td>
                                     <td>
-                                        <label class="badge badge-outline badge-primary">Elektronik</label>
-                                    </td>
-                                    <td>&#x20BA;@product.Price</td>
-                                    <td>@product.Stock Adet</td>
-                                    <td>
-                                        @if(@product.UpdatedDate.Year == 0001)
+                                        @for (int i = 0; i < @dealer.Rating; i++)
                                         {
-                                            <a>Yok</a>   
-                                        }else{
-                                            @(((DateTime)product.UpdatedDate).ToString("MMM dd, yyyy - hh:mm"))
-                                        }   
+                                            <i class="fa fa-star" style="color:#fed700;"></i>
+                                        }
                                     </td>
                                     <td>
-                                        @if (product.Status)
+                                        @if (dealer.UpdatedDate.Year == 0001)
+                                        {
+                                            <a>Yok</a>
+                                        }
+                                        else
+                                        {
+                                            @(((DateTime)dealer.UpdatedDate).ToString("MMM dd, yyyy - hh:mm"))
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (dealer.Status)
                                         {
                                             <label class="badge badge-success">Aktif</label>
-                                        }else{
+                                        }
+                                        else
+                                        {
                                             <label class="badge badge-danger">Pasif</label>
-                                        }                                    
+                                        }
                                     </td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-info btn-sm">Görüntüle</button>
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="sr-only">Toggle Dropdown</span>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                                                 <h6 class="dropdown-header">İşlemler</h6>
-                                                <a class="dropdown-item" href="#">Düzenle</a>
-                                                <a class="dropdown-item" href="#">Satışı Durdur</a>
-                                                <a class="dropdown-item" href="#">Soruları Gör</a>
+                                                <a class="dropdown-item" href="#">Profili Gör</a>
+                                                <a class="dropdown-item" href="#">Pasif Yap</a>
+                                                <a class="dropdown-item" href="#">Mesaj</a>
                                                 <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" href="#">Bildir</a>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                            }         
+                            }
                         </tbody>
                     </table>
                 </div>
