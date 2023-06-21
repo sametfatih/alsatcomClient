@@ -29,8 +29,8 @@ namespace alsatcomClient.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> DealerAdd(DealerAddModel model)
         {
-            bool response = await _httpClientService.PostRequest<DealerAddModel>(model, "Dealer/Create");
-            if (!response)
+            var response = await _httpClientService.PostRequest<DealerAddModel>(model, "Dealer/Create");
+            if (!response.IsSuccessStatusCode)
             {
                 return BadRequest(ModelState);
             }

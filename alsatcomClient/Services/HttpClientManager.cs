@@ -22,11 +22,11 @@ namespace alsatcomClient.Services
             return result!;
         }
 
-        public async Task<bool> PostRequest<T>(T model, string uri)
+        public async Task<HttpResponseMessage> PostRequest<T>(T model, string uri)
         {
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<T>(uri, model);
 
-            return response.IsSuccessStatusCode;
+            return response;
             
         }
     }

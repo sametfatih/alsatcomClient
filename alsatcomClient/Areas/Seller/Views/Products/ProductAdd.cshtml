@@ -21,63 +21,746 @@
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
-                <form id="example-form" action="#">
-                    <div>
-                        <h3>Bilgiler</h3>
-                        <section>
-                            <div class="form-group">
-                                <label for="userName">Ürün Adı *</label>
-                                <input id="userName" name="userName" type="text" class="required form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Markası *</label>
-                                <input id="password" name="password" type="password" class="required form-control">
-                                <small>(*) Zorunlu</small>
-                            </div>
-                        </section>
-                        <h3>Açıklama</h3>
-                        <section>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div id="summernoteExample">
-                                        Ürün açıklaması giriniz...
-                                    </div>
+                <form id="productAdd-form">
+                    <h5>Bilgiler</h5>
+                    <section>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="name">Ürün Adı *</label>
+                                    <input id="name" name="Name" type="text" placeholder="Asus Vivobook 15X OLED Notebook" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dealerId">Satıcı Numarası*</label>
+                                    <input id="dealerId" name="DealerId" type="text" value="0499518d-45ed-45e6-85d0-08db6f8be8de" class="form-control">
+
                                 </div>
                             </div>
-                        </section>
-                        <h3>Fotoğraflar</h3>
-                        <section>
-                            <div class="col-lg-auto stretch-card align-items-center">
-                                <div class="container text-center">
-                                    <div id="div1" class="row row-cols-4">
-                                        <div class="col-md-3" style="margin-top:20px;">
-                                            <input type="file" class="dropify" data-height="200" />
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="brandName">Markası *</label>
+                                    <input id="brandName" name="BrandName" type="text" placeholder="Asus" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="brandName">Kategori *</label>
+                                    <input id="categoryName" name="CategoryName" type="text" placeholder="Elektronik" class="required form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <small class="text-danger">(*) Zorunlu alanlar</small>
+                    </section>
+                    <div class="divider"></div>
+                    <h5>Açıklama</h5>
+                    <section>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="price">Ürün Açıklaması *</label>
+                                    <textarea name="Description" id="summernoteExample">Ürün açıklaması giriniz...</textarea>
+                                    <label id="decription-error" class="error" style="display:none;" for="description">Açıklama boş bırakılamaz.</label>
+                                </div>
+                            </div>
+                        </div>
+                        <small>(*) Bu alanı doldurmak zorunludur. Ürünü detaylı bir şekilde anlatınız. Ürüne ait özellikler, bilgiler ve ürünün kullanımı hakkında bilgi veriniz.</small>
+                    </section>
+                    <div class="divider"></div>
+                    <h5>Fotoğraflar</h5>
+                    <section>
+                        <div class="col-lg-auto stretch-card align-items-center">
+                            <div class="container text-center">
+                                <div id="div1" class="row row-cols-4">
+                                    <div class="col-md-3" style="margin-top:20px;">
+                                        <input type="file" class="dropify" data-height="200" />
+                                    </div>
+                                </div>
+                                <button type="button" onclick="addImage()" class="btn btn-outline-secondary btn-rounded btn-icon" style="margin:2em !important">
+                                    <i class="fas fa-plus text-success"></i>
+                                </button>
+                                <button type="button" onclick="deleteImage()" class="btn btn-outline-secondary btn-rounded btn-icon" style="margin:2em !important">
+                                    <i class="fas fa-trash text-danger"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="divider"></div>
+                    <h5>Fiyat ve Stok</h5>
+                    <section>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="price">Ürün Fiyatı *</label>
+                                    <div class="input-group">
+
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-primary text-white">TL</span>
                                         </div>
+                                        <input type="text" class="form-control" placeholder="54.90" id="price" name="Price">
                                     </div>
-                                    <button type="button" onclick="addImage()" class="btn btn-outline-secondary btn-rounded btn-icon" style="margin:2em !important">
-                                        <i class="fas fa-plus text-success"></i>
-                                    </button>
-                                    <button type="button" onclick="deleteImage()" class="btn btn-outline-secondary btn-rounded btn-icon" style="margin:2em !important">
-                                        <i class="fas fa-trash text-danger"></i>
-                                    </button>
                                 </div>
                             </div>
-                        </section>
-                        <h3>Şartlar ve Koşullar</h3>
-                        <section>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="checkbox" type="checkbox">
-                                    Şartlar ve koşulları kabul ediyorum.
-                                </label>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="stock">Ürün Stoğu *</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Adet</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="12" id="stock" name="Stock">
+                                    </div>
+                                </div>
                             </div>
-                        </section>
+                        </div>
+                        <small class="text-danger">(*) Zorunlu alanlar</small>
+                    </section>
+                    <div class="divider"></div>
+                    <section>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p align="center" style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="4" style="font-size: 14pt">
+                                                    <b>
+                                                        &#350;artlar
+                                                        ve Ko&#351;ullar
+                                                    </b>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            &#304;&#351;bu
+                                                            s&ouml;zle&#351;me taraflara s&ouml;zle&#351;me konusu site ile
+                                                            ilgili hak ve y&uuml;k&uuml;ml&uuml;l&uuml;kler y&uuml;kler ve
+                                                            taraflar i&#351;bu s&ouml;zle&#351;meyi kabul ettiklerinde bahsi
+                                                            ge&ccedil;en hak ve y&uuml;k&uuml;ml&uuml;l&uuml;kleri eksiksiz,
+                                                            do&#287;ru, zaman&#305;nda, i&#351;bu s&ouml;zle&#351;mede talep
+                                                            edilen &#351;artlar d&acirc;hilinde yerine getireceklerini beyan
+                                                            ederler.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            1.
+                                                            SORUMLULUKLAR
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            a.Firma,
+                                                            fiyatlar ve sunulan &uuml;r&uuml;n ve hizmetler &uuml;zerinde
+                                                            de&#287;i&#351;iklik yapma hakk&#305;n&#305; her zaman sakl&#305;
+                                                            tutar.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            b.Firma,
+                                                            &uuml;yenin s&ouml;zle&#351;me konusu hizmetlerden, teknik ar&#305;zalar
+                                                            d&#305;&#351;&#305;nda yararland&#305;r&#305;laca&#287;&#305;n&#305;
+                                                            kabul ve taahh&uuml;t eder.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            c.Kullan&#305;c&#305;,
+                                                            sitenin kullan&#305;m&#305;nda tersine m&uuml;hendislik yapmayaca&#287;&#305;n&#305;
+                                                            ya da bunlar&#305;n kaynak kodunu bulmak veya elde etmek amac&#305;na
+                                                            y&ouml;nelik herhangi bir ba&#351;ka i&#351;lemde bulunmayaca&#287;&#305;n&#305;
+                                                            aksi halde ve 3. Ki&#351;iler nezdinde do&#287;acak zararlardan
+                                                            sorumlu olaca&#287;&#305;n&#305;, hakk&#305;nda hukuki ve cezai i&#351;lem
+                                                            yap&#305;laca&#287;&#305;n&#305; pe&#351;inen kabul eder.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            d.Kullan&#305;c&#305;,
+                                                            site i&ccedil;indeki faaliyetlerinde, sitenin herhangi bir b&ouml;l&uuml;m&uuml;nde
+                                                            veya ileti&#351;imlerinde genel ahlaka ve adaba ayk&#305;r&#305;,
+                                                            kanuna ayk&#305;r&#305;, 3. Ki&#351;ilerin haklar&#305;n&#305;
+                                                            zedeleyen, yan&#305;lt&#305;c&#305;, sald&#305;rgan, m&uuml;stehcen,
+                                                            pornografik, ki&#351;ilik haklar&#305;n&#305; zedeleyen, telif
+                                                            haklar&#305;na ayk&#305;r&#305;, yasa d&#305;&#351;&#305;
+                                                            faaliyetleri te&#351;vik eden i&ccedil;erikler &uuml;retmeyece&#287;ini,
+                                                            payla&#351;mayaca&#287;&#305;n&#305; kabul eder. Aksi halde olu&#351;acak
+                                                            zarardan tamamen kendisi sorumludur ve bu durumda &lsquo;Site&rsquo;
+                                                            yetkilileri, bu t&uuml;r hesaplar&#305; ask&#305;ya alabilir, sona
+                                                            erdirebilir, yasal s&uuml;re&ccedil; ba&#351;latma hakk&#305;n&#305;
+                                                            sakl&#305; tutar. Bu sebeple yarg&#305; mercilerinden etkinlik veya
+                                                            kullan&#305;c&#305; hesaplar&#305; ile ilgili bilgi talepleri gelirse
+                                                            payla&#351;ma hakk&#305;n&#305; sakl&#305; tutar.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            e.Sitenin
+                                                            &uuml;yelerinin birbirleri veya &uuml;&ccedil;&uuml;nc&uuml;
+                                                            &#351;ah&#305;slarla olan ili&#351;kileri kendi sorumlulu&#287;undad&#305;r.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            2.
+                                                            Fikri M&uuml;lkiyet Haklar&#305;
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            2.1.
+                                                            &#304;&#351;bu Site&rsquo;de yer alan &uuml;nvan, i&#351;letme ad&#305;,
+                                                            marka, patent, logo, tasar&#305;m, bilgi ve y&ouml;ntem gibi tescilli
+                                                            veya tescilsiz t&uuml;m fikri m&uuml;lkiyet haklar&#305; site
+                                                            i&#351;leteni ve sahibi firmaya veya belirtilen ilgilisine ait olup,
+                                                            ulusal ve uluslararas&#305; hukukun korumas&#305; alt&#305;ndad&#305;r.
+                                                            &#304;&#351;bu Site&rsquo;nin ziyaret edilmesi veya bu Site&rsquo;deki
+                                                            hizmetlerden yararlan&#305;lmas&#305; s&ouml;z konusu fikri m&uuml;lkiyet
+                                                            haklar&#305; konusunda hi&ccedil;bir hak vermez.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            2.2.
+                                                            Site&rsquo;de yer alan bilgiler hi&ccedil;bir &#351;ekilde
+                                                            &ccedil;o&#287;alt&#305;lamaz, yay&#305;nlanamaz, kopyalanamaz,
+                                                            sunulamaz ve/veya aktar&#305;lamaz. Site&rsquo;nin b&uuml;t&uuml;n&uuml;
+                                                            veya bir k&#305;sm&#305; di&#287;er bir internet sitesinde izinsiz
+                                                            olarak kullan&#305;lamaz.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            3.
+                                                            Gizli Bilgi
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            3.1.
+                                                            Firma, site &uuml;zerinden kullan&#305;c&#305;lar&#305;n iletti&#287;i
+                                                            ki&#351;isel bilgileri 3. Ki&#351;ilere a&ccedil;&#305;klamayacakt&#305;r.
+                                                            Bu ki&#351;isel bilgiler; ki&#351;i ad&#305;-soyad&#305;, adresi,
+                                                            telefon numaras&#305;, cep telefonu, e-posta adresi gibi Kullan&#305;c&#305;&rsquo;y&#305;
+                                                            tan&#305;mlamaya y&ouml;nelik her t&uuml;rl&uuml; di&#287;er bilgiyi
+                                                            i&ccedil;ermekte olup, k&#305;saca &lsquo;Gizli Bilgiler&rsquo;
+                                                            olarak an&#305;lacakt&#305;r.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            3.2.
+                                                            Kullan&#305;c&#305;, sadece tan&#305;t&#305;m, reklam, kampanya,
+                                                            promosyon, duyuru vb. pazarlama faaliyetleri kapsam&#305;nda
+                                                            kullan&#305;lmas&#305; ile s&#305;n&#305;rl&#305; olmak &uuml;zere,
+                                                            Site&rsquo;nin sahibi olan firman&#305;n kendisine ait ileti&#351;im,
+                                                            portf&ouml;y durumu ve demografik bilgilerini i&#351;tirakleri ya da
+                                                            ba&#287;l&#305; bulundu&#287;u grup &#351;irketleri ile payla&#351;mas&#305;na
+                                                            muvafakat etti&#287;ini kabul ve beyan eder. Bu ki&#351;isel bilgiler
+                                                            firma b&uuml;nyesinde m&uuml;&#351;teri profili belirlemek, m&uuml;&#351;teri
+                                                            profiline uygun promosyon ve kampanyalar sunmak ve istatistiksel
+                                                            &ccedil;al&#305;&#351;malar yapmak amac&#305;yla kullan&#305;labilecektir.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            3.3.
+                                                            Gizli Bilgiler, ancak resmi makamlarca usul&uuml; dairesinde bu
+                                                            bilgilerin talep edilmesi halinde ve y&uuml;r&uuml;rl&uuml;kteki
+                                                            emredici mevzuat h&uuml;k&uuml;mleri gere&#287;ince resmi makamlara
+                                                            a&ccedil;&#305;klama yap&#305;lmas&#305;n&#305;n zorunlu oldu&#287;u
+                                                            durumlarda resmi makamlara a&ccedil;&#305;klanabilecektir.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            4.
+                                                            Garanti Vermeme:
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font><font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            &#304;&#350;BU
+                                                            S&Ouml;ZLE&#350;ME MADDES&#304; UYGULANAB&#304;L&#304;R KANUNUN &#304;Z&#304;N
+                                                            VERD&#304;&#286;&#304; AZAM&#304; &Ouml;L&Ccedil;&Uuml;DE GE&Ccedil;ERL&#304;
+                                                            OLACAKTIR. F&#304;RMA TARAFINDAN SUNULAN H&#304;ZMETLER &quot;OLDU&#286;U
+                                                            G&#304;B&#304;&rdquo; VE &quot;M&Uuml;MK&Uuml;N OLDU&#286;U&rdquo;
+                                                            TEMELDE SUNULMAKTA VE PAZARLANAB&#304;L&#304;RL&#304;K, BEL&#304;RL&#304;
+                                                            B&#304;R AMACA UYGUNLUK VEYA &#304;HLAL ETMEME KONUSUNDA T&Uuml;M
+                                                            ZIMN&#304; GARANT&#304;LER DE D&Acirc;H&#304;L OLMAK &Uuml;ZERE
+                                                            H&#304;ZMETLER VEYA UYGULAMA &#304;LE &#304;LG&#304;L&#304; OLARAK
+                                                            (BUNLARDA YER ALAN T&Uuml;M B&#304;LG&#304;LER D&Acirc;H&#304;L)
+                                                            SAR&#304;H VEYA ZIMN&#304;, KANUN&#304; VEYA BA&#350;KA B&#304;R
+                                                            N&#304;TEL&#304;KTE H&#304;&Ccedil;B&#304;R GARANT&#304;DE
+                                                            BULUNMAMAKTADIR.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            5.
+                                                            Kay&#305;t ve G&uuml;venlik
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            Kullan&#305;c&#305;,
+                                                            do&#287;ru, eksiksiz ve g&uuml;ncel kay&#305;t bilgilerini vermek
+                                                            zorundad&#305;r. Aksi halde bu S&ouml;zle&#351;me ihlal edilmi&#351;
+                                                            say&#305;lacak ve Kullan&#305;c&#305; bilgilendirilmeksizin hesap
+                                                            kapat&#305;labilecektir.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            Kullan&#305;c&#305;,
+                                                            site ve &uuml;&ccedil;&uuml;nc&uuml; taraf sitelerdeki &#351;ifre ve
+                                                            hesap g&uuml;venli&#287;inden kendisi sorumludur. Aksi halde olu&#351;acak
+                                                            veri kay&#305;plar&#305;ndan ve g&uuml;venlik ihlallerinden veya
+                                                            donan&#305;m ve cihazlar&#305;n zarar g&ouml;rmesinden Firma sorumlu
+                                                            tutulamaz.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            6.
+                                                            M&uuml;cbir Sebep
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            Taraflar&#305;n
+                                                            kontrol&uuml;nde olmayan; tabii afetler, yang&#305;n, patlamalar, i&ccedil;
+                                                            sava&#351;lar, sava&#351;lar, ayaklanmalar, halk hareketleri,
+                                                            seferberlik ilan&#305;, grev, lokavt ve salg&#305;n hastal&#305;klar,
+                                                            altyap&#305; ve internet ar&#305;zalar&#305;, elektrik kesintisi gibi
+                                                            sebeplerden (a&#351;a&#287;&#305;da birlikte &quot;M&uuml;cbir Sebep&rdquo;
+                                                            olarak an&#305;lacakt&#305;r.) dolay&#305; s&ouml;zle&#351;meden
+                                                            do&#287;an y&uuml;k&uuml;ml&uuml;l&uuml;kler taraflarca ifa edilemez
+                                                            hale gelirse, taraflar bundan sorumlu de&#287;ildir. Bu s&uuml;rede
+                                                            Taraflar&rsquo;&#305;n i&#351;bu S&ouml;zle&#351;me&rsquo;den do&#287;an
+                                                            hak ve y&uuml;k&uuml;ml&uuml;l&uuml;kleri ask&#305;ya al&#305;n&#305;r.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            7.
+                                                            S&ouml;zle&#351;menin B&uuml;t&uuml;nl&uuml;&#287;&uuml; ve
+                                                            Uygulanabilirlik
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            &#304;&#351;bu
+                                                            s&ouml;zle&#351;me &#351;artlar&#305;ndan biri, k&#305;smen veya
+                                                            tamamen ge&ccedil;ersiz hale gelirse, s&ouml;zle&#351;menin geri
+                                                            kalan&#305; ge&ccedil;erlili&#287;ini korumaya devam eder.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            8.
+                                                            S&ouml;zle&#351;mede Yap&#305;lacak De&#287;i&#351;iklikler
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            Firma,
+                                                            diledi&#287;i zaman sitede sunulan hizmetleri ve i&#351;bu s&ouml;zle&#351;me
+                                                            &#351;artlar&#305;n&#305; k&#305;smen veya tamamen de&#287;i&#351;tirebilir.
+                                                            De&#287;i&#351;iklikler sitede yay&#305;nland&#305;&#287;&#305;
+                                                            tarihten itibaren ge&ccedil;erli olacakt&#305;r. De&#287;i&#351;iklikleri
+                                                            takip etmek Kullan&#305;c&#305;&rsquo;n&#305;n sorumlulu&#287;undad&#305;r.
+                                                            Kullan&#305;c&#305;, sunulan hizmetlerden yararlanmaya devam etmekle
+                                                            bu de&#287;i&#351;iklikleri de kabul etmi&#351; say&#305;l&#305;r.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            9.
+                                                            Tebligat
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            &#304;&#351;bu
+                                                            S&ouml;zle&#351;me ile ilgili taraflara g&ouml;nderilecek olan t&uuml;m
+                                                            bildirimler, Firma&rsquo;n&#305;n bilinen e.posta adresi ve
+                                                            kullan&#305;c&#305;n&#305;n &uuml;yelik formunda belirtti&#287;i
+                                                            e.posta adresi vas&#305;tas&#305;yla yap&#305;lacakt&#305;r.
+                                                            Kullan&#305;c&#305;, &uuml;ye olurken belirtti&#287;i adresin ge&ccedil;erli
+                                                            tebligat adresi oldu&#287;unu, de&#287;i&#351;mesi durumunda 5 g&uuml;n
+                                                            i&ccedil;inde yaz&#305;l&#305; olarak di&#287;er tarafa
+                                                            bildirece&#287;ini, aksi halde bu adrese yap&#305;lacak tebligatlar&#305;n
+                                                            ge&ccedil;erli say&#305;laca&#287;&#305;n&#305; kabul eder.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            10.
+                                                            Delil S&ouml;zle&#351;mesi
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            Taraflar
+                                                            aras&#305;nda i&#351;bu s&ouml;zle&#351;me ile ilgili i&#351;lemler
+                                                            i&ccedil;in &ccedil;&#305;kabilecek her t&uuml;rl&uuml;
+                                                            uyu&#351;mazl&#305;klarda Taraflar&rsquo;&#305;n defter, kay&#305;t
+                                                            ve belgeleri ile ve bilgisayar kay&#305;tlar&#305; ve faks kay&#305;tlar&#305;
+                                                            6100 say&#305;l&#305; Hukuk Muhakemeleri Kanunu uyar&#305;nca delil
+                                                            olarak kabul edilecek olup, kullan&#305;c&#305; bu kay&#305;tlara
+                                                            itiraz etmeyece&#287;ini kabul eder.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <b>
+                                                            11.
+                                                            Uyu&#351;mazl&#305;klar&#305;n &Ccedil;&ouml;z&uuml;m&uuml;
+                                                        </b>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                        <p style="line-height: 115%; margin-bottom: 0.14in">
+                                            <font face="Calibri, serif">
+                                                <font size="2" style="font-size: 11pt">
+                                                    <span lang="en-US">
+                                                        <span style="font-weight: normal">
+                                                            &#304;&#351;bu
+                                                            S&ouml;zle&#351;me&rsquo;nin uygulanmas&#305;ndan veya
+                                                            yorumlanmas&#305;ndan do&#287;acak her t&uuml;rl&uuml; uyu&#351;mazl&#305;&#287;&#305;n
+                                                            &ccedil;&ouml;z&uuml;m&uuml;nde &#304;stanbul (Merkez) Adliyesi
+                                                            Mahkemeleri ve &#304;cra Daireleri yetkilidir.
+                                                        </span>
+                                                    </span>
+                                                </font>
+                                            </font>
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                                <div class="form-check mt-3">
+                                    <label class="form-check-label">
+                                        <input class="checkbox" id="TermsAndConditions" type="checkbox">
+                                        Şartlar ve koşulları kabul ediyorum.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </section>
+                    <div class="row" style="flex-direction: row-reverse;">
+                        <button type="button" id="finishButton" class="btn btn-success btn-fw">Bitir</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function () {
+        
+        $("#finishButton").click(function () {
+
+            var editorVal = $("#summernoteExample").val();
+
+            if (editorVal != "" && editorVal != "Ürün açıklaması giriniz...") {
+
+                var valid = $("#productAdd-form").valid();
+
+                if (valid) {
+                    if ($('#TermsAndConditions').is(':checked')) {
+
+                        var formData = $("#productAdd-form").serialize();
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/Admin/Products/ProductAdd",
+                            data: formData,
+                            dataType: "json",
+                            encode: true,
+                            beforeSend: function () {
+                                showSpinner();
+                            },
+                            success: function (data) {
+                                setTimeout(() => {
+                                    document.location.href = '/admin/dashboard';
+                                }, 3500);
+                                hideSpinner();
+                                document.getElementById("finishButton").disabled = true;
+                                showSuccessToast('Ürün başarıyla eklendi.');
+                                showInfoToast('Anasayfaya yönlendiriliyorsunuz.');
+                            },
+                            error: function () {
+                                hideSpinner();
+                                showDangerToast('Ürün eklenemedi!. Lütfen tekrar deneyiniz.');
+                            }
+                        });
+                    }
+                    else {
+                        showWarningToast('Lütfen şartlar ve koşullar sözleşmesini onaylayın!.');
+                    }
+                }
+                else {
+                    showWarningToast('Lütfen alanları eksiksiz ve istenilen şekilde doldurun!.');
+                }
+
+
+            } else {
+                showWarningToast('Lütfen alanları eksiksiz ve istenilen şekilde doldurun!.');
+                $("#decription-error").css("display", "block");
+                setTimeout(() => {
+                    $("#decription-error").css("display", "none");
+                }, 5000);
+            }
+
+        });
+
+        $("#productAdd-form").validate({
+            rules: {
+                Name: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 50
+                },
+                DealerId: {
+                    required: true,
+                    minlength: 5,
+                },
+                BrandName: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 35
+                },
+                CategoryName: {
+                    required: true
+                },
+                Price: {
+                    required: true,
+                    number: true,
+                    range: [1, 99999]
+                },
+                Stock: {
+                    required: true,
+                    digits: true,
+                    range: [5, 1000]
+                }
+            },
+            messages: {
+                Name: {
+                    required: "Ürünün ismi boş bırakılamaz.",
+                    minlength: "En az 8 karakter uzunlukta olmalı.",
+                    maxlength: "En fazla 50 karakter uzunlukta olmalı."
+                },
+                DealerId: {
+                    required: "Satıcı numarası boş bırakılamaz.",
+                    minlength: "En az 5 karakter uzunlukta olmalı.",
+                },
+                BrandName: {
+                    required: "Ürünün markası boş bırakılamaz.",
+                    minlength: "En az 5 karakter uzunlukta olmalı.",
+                    maxlength: "En fazla 35 karakter uzunlukta olmalı."
+                },
+                CategoryName: {
+                    required: "Ürünün kategorisi boş bırakılamaz.",
+                },
+                Description: {
+                    required: "Ürünün açıklaması boş bırakılamaz.",
+                    minlength: "En az 50 karakter uzunlukta olmalı.",
+                    maxlength: "En fazla 500 karakter uzunlukta olmalı."
+                },
+                Price: {
+                    required: "Ürünün fiyatı boş bırakılamaz.",
+                    number: "Fiyat bilgisi sadece sayı olabilir.(Virgül yerine nokta kullanınız.)",
+                    range: "En az 1, en çok 99999 olmalıdır."
+                },
+                Stock: {
+                    required: "Ürünün stok miktarı boş bırakılamaz.",
+                    digits: "Stok bilgisi sadece rakam olabilir.",
+                    range: "En az 5, en çok 1000 olmalıdır."
+                }
+            }
+        });
+
+    });
+</script>
 
 <script>
 

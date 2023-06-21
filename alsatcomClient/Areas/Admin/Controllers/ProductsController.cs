@@ -14,7 +14,6 @@ namespace alsatcomClient.Areas.Admin.Controllers
         {
             _httpClientService = httpClientService;
         }
-
         public async Task<IActionResult> ProductList()
         {
 
@@ -28,8 +27,8 @@ namespace alsatcomClient.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> ProductAdd(ProductAddModel model) {
 
-            bool response = await  _httpClientService.PostRequest<ProductAddModel>(model,"Product/Create");
-            if (!response) {
+            var response = await  _httpClientService.PostRequest<ProductAddModel>(model,"Product/Create");
+            if (!response.IsSuccessStatusCode) {
                return BadRequest(ModelState);
             }
             return Ok(ModelState);

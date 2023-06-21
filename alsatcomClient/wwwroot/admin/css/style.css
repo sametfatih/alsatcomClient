@@ -9462,14 +9462,14 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #f3ce00;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
 }
 
     a:hover {
-        color: #0056b3;
+        color: #fed700;
         text-decoration: underline;
     }
 
@@ -19874,7 +19874,7 @@ input:focus {
         .sidebar .nav .nav-item.active > .nav-link i,
         .sidebar .nav .nav-item.active > .nav-link .menu-title,
         .sidebar .nav .nav-item.active > .nav-link .menu-arrow {
-            color: #392C70;
+            color: #fed700;
         }
 
         .sidebar .nav .nav-item.active > .nav-link:before {
@@ -19884,7 +19884,7 @@ input:focus {
             top: 0;
             height: 100%;
             width: 3px;
-            background: #392C70;
+            background: #fed700;
         }
 
 .sidebar .nav .nav-item.nav-profile .nav-link {
@@ -29561,7 +29561,7 @@ body.avgrund-active {
     .br-theme-fontawesome-stars .br-widget a.br-selected:after, .br-theme-fontawesome-stars .br-widget a.br-active:after,
     .br-theme-css-stars .br-widget a.br-selected:after,
     .br-theme-css-stars .br-widget a.br-active:after {
-        color: #392C70;
+        color: #fed700;
     }
 
 .br-theme-bars-1to10 .br-widget a,
@@ -29570,7 +29570,7 @@ body.avgrund-active {
 .br-theme-bars-reversed .br-widget a,
 .br-theme-bars-horizontal .br-widget a {
     background-color: rgba(57, 44, 112, 0.6);
-    color: #392C70;
+    color: #fed700;
 }
 
     .br-theme-bars-1to10 .br-widget a.br-selected, .br-theme-bars-1to10 .br-widget a.br-active,
@@ -29582,7 +29582,7 @@ body.avgrund-active {
     .br-theme-bars-reversed .br-widget a.br-active,
     .br-theme-bars-horizontal .br-widget a.br-selected,
     .br-theme-bars-horizontal .br-widget a.br-active {
-        background-color: #392C70;
+        background-color: #fed700;
     }
 
 .br-theme-bars-square .br-widget a {
@@ -29591,8 +29591,8 @@ body.avgrund-active {
 }
 
     .br-theme-bars-square .br-widget a.br-selected, .br-theme-bars-square .br-widget a.br-active {
-        border-color: #392C70;
-        color: #392C70;
+        border-color: #fed700;
+        color: #fed700;
     }
 
 .br-theme-bars-movie .br-widget .br-current-rating,

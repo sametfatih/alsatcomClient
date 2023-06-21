@@ -22,22 +22,16 @@
     <link rel="stylesheet" href="~/admin/css/style.css">
     <link rel="shortcut icon" href="~/admin/images/logo3.png" type="image/x-icon">
     <!-- endinject -->
-    
-
-    
     <script src="~/admin/js/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-
-   
 </head>
 <body>
-
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="#"><img src="~/admin/images/logo3.png" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="#"><img src="~/admin/images/logo3.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="/admin/dashboard"><img src="~/admin/images/logo3.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="/admin/dashboard"><img src="~/admin/images/logo3.png" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -252,7 +246,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts3" aria-expanded="false" aria-controls="page-layouts3">
                             <i class="fas fa-comments menu-icon"></i>
-                            <span class="menu-title">Destek Talepleri</span>
+                            <span class="menu-title">Destek (Yakında)</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="page-layouts3">
@@ -265,15 +259,21 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts4" aria-expanded="false" aria-controls="page-layouts4">
                             <i class="fas fa-chart-pie menu-icon"></i>
-                            <span class="menu-title">İstatistikler</span>
+                            <span class="menu-title">İstatistikler (Yakında)</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="page-layouts4">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="#"></a></li>
-                                <li class="nav-item"> <a class="nav-link" href="#"></a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Genel İstatistikler</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="#">Detaylı İstatistikler</a></li>
                             </ul>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-cog menu-icon"></i>
+                            <span class="menu-title">Ayarlar (Yakında)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Home" target="_blank">
@@ -295,7 +295,7 @@
                 <!-- partial:../../partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.urbanui.com/" target="_blank">Samet Fatih Gözüm</a>. Tüm hakları saklıdır.</span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://github.com/sametfatih" target="_blank">Samet Fatih Gözüm</a>. Tüm hakları saklıdır.</span>
                     </div>
                 </footer>
                 <!-- partial -->
@@ -314,13 +314,9 @@
     <script src="~/admin/js/toastdemo.js"></script>
     <script src="~/admin/js/loader.js"></script>
     <!-- plugins:js -->
-
     <script src="~/admin/vendors/js/vendor.bundle.base.js"></script>
     <script src="~/admin/vendors/js/vendor.bundle.addons.js"></script>
     <script src="~/admin/vendors/summernote/dist/summernote-bs4.min.js"></script>
-
-    
-
     <!-- endinject -->
 
     <!-- inject:js -->

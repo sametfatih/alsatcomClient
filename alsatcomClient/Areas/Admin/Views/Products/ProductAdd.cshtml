@@ -638,7 +638,6 @@
         $("#finishButton").click(function () {
 
             var editorVal = $("#summernoteExample").val();
-            console.log(editorVal);
 
             if (editorVal != "" && editorVal != "Ürün açıklaması giriniz...") {
 
@@ -648,6 +647,7 @@
                     if ($('#TermsAndConditions').is(':checked')) {
 
                         var formData = $("#productAdd-form").serialize();
+                        console.log(formData);
 
                         $.ajax({
                             type: "POST",
@@ -656,6 +656,7 @@
                             dataType: "json",
                             encode: true,
                             beforeSend: function () {
+                                
                                 showSpinner();
                             },
                             success: function (data) {
@@ -663,6 +664,7 @@
                                     document.location.href = '/admin/dashboard';
                                 }, 3500);
                                 hideSpinner();
+                                document.getElementById("finishButton").disabled = true;
                                 showSuccessToast('Ürün başarıyla eklendi.');
                                 showInfoToast('Anasayfaya yönlendiriliyorsunuz.');
                             },

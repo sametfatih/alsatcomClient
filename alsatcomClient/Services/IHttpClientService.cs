@@ -3,7 +3,7 @@
     public interface IHttpClientService
     {
         Task<T> GetRequest<T>(string requestUri);
-        Task<bool> PostRequest<T>(T model, string uri);
+        Task<HttpResponseMessage> PostRequest<T>(T model, string uri);
 
 
     }
